@@ -1,31 +1,40 @@
 @font-face {
-  font-family: "FFShamel";
-  src: url("fonts/FFShamelFamily-NormalUnique 2.ttf") format("truetype");
+  font-family: "FFShamelSansBold";
+  src: url("ArbFONTS-FFShamelFamily-SansOneBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "FFShamelNormal";
+  src: url("FFShamelFamily-NormalUnique 2.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "FFShamelMedium";
-  src: url("fonts/FFShamelFamily-MediumUnique 2.ttf") format("truetype");
+  src: url("FFShamelFamily-MediumUnique 2.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "FFShamelLight";
-  src: url("fonts/FFShamelFamily-LightUnique 2.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "CoHeadline";
-  src: url("fonts/Co Headline W01 Regular 3.ttf") format("truetype");
+  src: url("FFShamelFamily-LightUnique 2.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "CoHeadlineBold";
-  src: url("fonts/Co Headline W01 Bold 5.otf") format("opentype");
+  src: url("Co Headline W01 Bold 5.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "CoHeadlineRegular";
+  src: url("Co Headline W01 Regular 3.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "CoHeadlineLight";
-  src: url("fonts/Co Headline W01 Light 5.otf") format("opentype");
+  src: url("Co Headline W01 Light 5.otf") format("opentype");
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -54,6 +63,7 @@ body {
 input,
 select,
 button {
+  width: 100%;
   padding: 12px;
   border-radius: 10px;
   border: 1px solid #ddd;
@@ -68,22 +78,30 @@ button {
   cursor: pointer;
 }
 
+#dragButton.active {
+  background: #222;
+}
+
 .card-wrapper {
   width: 100%;
+  max-width: 420px;
   display: flex;
   justify-content: center;
 }
 
 .card {
   position: relative;
-  width: min(100vw - 30px, 540px);
+  width: 100%;
+  max-width: 420px;
   aspect-ratio: 1080 / 1350;
   overflow: hidden;
+  border-radius: 16px;
 }
 
 .card img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
   display: block;
 }
 
@@ -92,20 +110,21 @@ button {
   text-align: center;
   color: white;
   user-select: none;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  cursor: move;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.35);
   left: 50%;
   transform: translateX(-50%);
   width: 85%;
 }
 
 .name {
-  bottom: 38px;
+  bottom: 44px;
   font-size: 18px;
-  font-family: "FFShamel";
+  font-family: "FFShamelSansBold";
 }
 
 .title {
-  bottom: 12px;
+  bottom: 18px;
   font-size: 14px;
-  font-family: "CoHeadline";
+  font-family: "CoHeadlineRegular";
 }
